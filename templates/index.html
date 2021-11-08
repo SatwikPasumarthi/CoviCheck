@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <title>CoviCheck</title>
+    <style type="text/css">
+    
+
+    body{
+        background-color: #f7f6e7;
+        font-family: 'Poppins';
+        font-weight:400;
+    }
+    
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 20px 30px 15px;
+    cursor: pointer;
+    color: #F5F7FA;;
+    border-color: #1687a7;
+    background-color: #1687a7;
+}
+.custom-file-upload:hover{
+    border-color: #03506f;
+    background-color: #03506f;
+}
+.heading{
+    
+}
+.square {
+    position: fixed;
+    background: lightblue;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+}
+.circle {
+    position: fixed;
+    
+    background: lightblue;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+}
+    </style>
+</head>
+<body>
+    <div style="top: 0; left: 250px; height: 200px;"class="square"></div>
+    <div style="top: 150px; left: 250px;" class="circle"></div>
+
+    <div style="bottom: 120px; left: 0;" class="square"></div>
+    <div style="bottom: 120px; left: 50px;" class="circle"></div>
+    
+    <div style="top: 100px; right: 0; width: 250px;" class="square"></div>
+    <div style="top: 100px; right: 200px;" class="circle"></div>
+
+    <div style="bottom: 0; right: 50px; height: 150px;" class="square"></div>
+    <div style="bottom: 100px; right: 50px;" class="circle"></div>
+    
+
+    <div style="width: 70%; margin: 20px auto;text-align: center; " >
+        
+
+        <div style="margin: 50px auto; margin-bottom: 70px;" class="heading" >
+            <img  src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/933/6283644933_e51ec00b-576e-48a0-a71c-0d16ce90c065.png?cb=1635516773" width=""alt="">
+</div>
+
+
+
+
+    
+
+    <form action="{{ url_for('predict') }}" method="post" enctype=multipart/form-data>
+        <div class="mb-3">
+            <label class="custom-file-upload">
+                <input type="file" name="ct_scan" accept="image/png, image/jpeg, image/jpg"/>
+                <h5><i class="ri-upload-2-fill"></i> &nbspUpload Image </h5>
+            </label>
+          <input type="file" name="ct_scan" accept="image/png, image/jpeg, image/jpg" class="custom-file-input">
+        </div>
+        <button type="submit" class="btn btn-outline-info btn-lg" ><i class="fas fa-sign-in-alt"></i> SUBMIT</button>
+      </form>
+      <br><br>
+      <h3 style="text-align: left;color: #03506f;font-weight: 500;">What is this?</h3>
+      <p style="text-align: left; padding-left: 25px;color: #252A34;">This project aims to design and develop a deep learning model for early detection of the COVID-19 by using CT scan
+    images. The ﬁnal accuracy level of my deep learning model is recorded as 0.91 and the loss is recorded as 0.26. The deep
+    learning model answers nearly the 0.91v of the CT scan images of the patients correctly and, distinguishes between the
+    infected and not infected by the COVID-19 virus.</p>
+    </div>
+
+    
+    
+
+    
+    <div id="footer" style="background-color: #ccf2f4; height: 40px;position: fixed;bottom: 0;width: 100%">
+        <p style="text-align: center; color: black; padding-top: 5px;"><i class="ri-copyright-line"></i>Copyright - 2021
+        </p>
+    </div>
+       
+    
+    
+</body>
+</html>
